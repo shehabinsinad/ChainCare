@@ -68,11 +68,3 @@ ChainCare employs a defense-in-depth strategy:
 4.  **Audit Logging**: Immutable internal logs.
 5.  **Blockchain**: Public, decentralized verification of log integrity.
 
-
-
-## 👥 Contributors
-
-*   Authentication & User Management
-*   Medical Records & Data Management
-*   Blockchain Audit Trail & Verification
-*   AI Clinical Assistants & Doctor Workflow
