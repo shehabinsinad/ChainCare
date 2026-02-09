@@ -46,3 +46,12 @@ app.*.map.json
 
 # Environment variables
 .env
+
+# Python scripts
+*.py
+
+# PowerPoint presentations
+*.pptx
+
+# Temporary files
+lib/screens/TEMP_system_prompt.txt
