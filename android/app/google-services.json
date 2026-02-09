@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "444623396920",
+    "project_id": "chaincare-a6ef7",
+    "storage_bucket": "chaincare-a6ef7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:444623396920:android:d1f9dbba7f4c817382c6cd",
+        "android_client_info": {
+          "package_name": "com.chaincare.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "444623396920-m91ljtbptbltk3ljv2t6frq066h3ahhs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZeCO1wkglXPAHaCpOyMP0EN4CPk2LHyQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "444623396920-m91ljtbptbltk3ljv2t6frq066h3ahhs.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "444623396920-jk24e9hqenvn7no8le48r4dgrqmha9o4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.chaincare"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:444623396920:android:018909f2ef5663c882c6cd",
+        "android_client_info": {
+          "package_name": "com.example.chaincare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "444623396920-ja3b80oeemkne4gpqlmqoqfl2u3ogqa5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.chaincare",
+            "certificate_hash": "1780d1bd604c8b187e1b3808ed819de71bf4cc23"
+          }
+        },
+        {
+          "client_id": "444623396920-m91ljtbptbltk3ljv2t6frq066h3ahhs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZeCO1wkglXPAHaCpOyMP0EN4CPk2LHyQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "444623396920-m91ljtbptbltk3ljv2t6frq066h3ahhs.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "444623396920-jk24e9hqenvn7no8le48r4dgrqmha9o4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.chaincare"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

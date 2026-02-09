@@ -1,0 +1,41 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    
+    // Profile pictures - users can upload their own
+    match /profile_pics/{userId}/{fileName} {
+      allow read: if true; // Public read for profile pictures
+      allow write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // Doctor avatars - alternative path for doctor profile pictures
+    match /doctor_avatars/{fileName} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+    
+    // Doctor ID verification documents - doctors only
+    match /doctor_ids/{userId}/{fileName} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // Medical records/documents - authenticated users only
+    match /medical_records/{userId}/{fileName} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null;
+    }
+    
+    // ✅ FIX: Patient documents uploaded by doctors (clinical records)
+    match /patients/{userId}/documents/{fileName} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null; // Doctors can upload to patient folders
+    }
+    
+    // Patient uploads - private to patient
+    match /patient_uploads/{userId}/{fileName} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow write: if request.auth != null && request.auth.uid == userId;
+    }
+  }
+}

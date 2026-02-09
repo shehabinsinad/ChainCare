@@ -1,0 +1,77 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // --- HELPER FUNCTIONS ---
+    
+    function isOwner(userId) {
+      return request.auth != null && request.auth.uid == userId;
+    }
+    
+    function isAdmin() {
+      return request.auth != null && 
+      exists(/databases/$(database)/documents/users/$(request.auth.uid)) &&
+      get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+
+    // 1. USERS COLLECTION
+    match /users/{userId} {
+      allow read: if true; // Needed for doctor search
+      allow create: if isOwner(userId);
+      allow update: if isOwner(userId) || isAdmin();
+    }
+
+    // 2. EMERGENCY DATA (Public Read)
+    match /users/{userId}/emergency/data {
+      allow read: if true;
+      allow write: if isOwner(userId) || isAdmin();
+    }
+
+    // 3. MEDICAL RECORDS (Strict Auth)
+    match /{path=**}/records/{recordId} {
+      allow read, write: if request.auth != null;
+    }
+
+    // 4. DOCTOR ID UPLOADS
+    match /doctor_ids/{docId} { 
+      allow read, write: if request.auth != null; 
+    }
+
+    // 5. BLOCKCHAIN AUDIT TRAIL
+    // Allows logged-in users (Doctors) OR Anonymous users performing an EMERGENCY_VIEW
+    match /audit_chain/{docId} {
+      allow read: if true; 
+      allow create: if request.auth != null || 
+                   (request.resource.data.action == 'EMERGENCY_VIEW');
+    }
+
+    // 6. AUDIT LOGS - For patient and admin audit log screens
+    match /audit_logs/{logId} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null;
+    }
+
+    // 7. ADMIN GLOBAL AUDIT - Collection group query support
+    match /{path=**}/audit_logs/{logId} {
+      allow read: if request.auth != null;
+    }
+
+    // 8. PATIENT CHAT HISTORY - Private to patient only
+    // Doctors explicitly cannot access patient chat history
+    match /users/{userId}/patientChatHistory/{messageId} {
+      allow read, write: if isOwner(userId);
+    }
+
+    // 9. BLOCKCHAIN ANCHORS - Daily blockchain posts (read-only for authenticated users)
+    match /blockchain_anchors/{anchorId} {
+      allow read: if request.auth != null;
+      allow write: if false; // Only Firebase Functions can write
+    }
+
+    // 10. BLOCKCHAIN ERRORS - Admin monitoring (read-only for admins)
+    match /blockchain_errors/{errorId} {
+      allow read: if isAdmin();
+      allow write: if false; // Only Firebase Functions can write
+    }
+  }
+}

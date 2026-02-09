@@ -1,0 +1,19 @@
+{
+    "name": "chaincare-functions",
+    "description": "Cloud Functions for ChainCare medical document processing",
+    "engines": {
+        "node": "20"
+    },
+    "main": "index.js",
+    "dependencies": {
+        "@google-cloud/storage": "^7.7.0",
+        "ethers": "^5.7.2",
+        "firebase-admin": "^12.0.0",
+        "firebase-functions": "^4.5.0",
+        "pdf-parse": "^1.1.1"
+    },
+    "devDependencies": {
+        "firebase-functions-test": "^3.1.0"
+    },
+    "private": true
+}
