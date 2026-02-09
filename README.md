@@ -1,70 +1,109 @@
-# ChainCare: Blockchain-Secured Medical Records Management System
+# ChainCare - Secure Medical Record Management
 
-ChainCare is a comprehensive medical records ecosystem that bridges the trusting gap between patients and doctors using Blockchain technology and AI.
+A mobile health vault with biometric security, QR-based access control, and blockchain audit trails.
 
-## 🚀 Key Features
+## 📋 Problem Statement
 
-*   **Secure Storage**: Cloud-based storage using Firebase with AES-256 encryption for data at rest and in transit.
-*   **Blockchain Audit Trail**: A two-layer tamper-evident system using a real-time hash chain (Firestore) and daily anchoring on the Polygon Blockchain.
-*   **AI-Powered Assistance**:
-    *   **Doctor Clinical Assistant**: Analyzes patient records to provide clinical insights.
-    *   **Patient Medical Assistant**: Educates patients about their health in simple terms.
-    *   Powered by Google Gemini 2.0 Flash with RAG (Retrieval Augmented Generation).
-*   **Smart Consent**: QR-based explicit patient consent mechanism for temporary doctor access.
-*   **Biometric App Lock**: Banking-grade security using on-device biometrics (FaceID, Fingerprint).
-*   **Doctor Verification**: ML-assisted verification of medical licenses using Google ML Kit.
+Patients lack control over their medical data, and there's no transparent way to track who accessed their records and when.
 
-## 🛠️ Technology Stack
+## 💡 Solution
 
-*   **Frontend**: Flutter (iOS & Android)
-*   **Backend**: Firebase Ecosystem
-    *   Authentication (Email, Phone, Google)
-    *   Cloud Firestore (NoSQL Database)
-    *   Cloud Storage (Medical Documents)
-    *   Cloud Functions (Node.js Serverless)
-*   **Blockchain**: Polygon Amoy Testnet (Solidity Smart Contract)
-*   **AI**: Google Gemini 2.0 Flash
-*   **ML**: Google ML Kit (Text Recognition)
+ChainCare is a Flutter mobile application that gives patients full control over their medical records through multi-layer security:
 
-## 📦 Installation & Setup
+1. **Biometric Authentication** - Fingerprint/Face ID app lock with AES-256 encryption
+2. **QR-Based Access Control** - Patients generate temporary QR codes for doctors to scan
+3. **Blockchain Audit Trail** - Every access event logged immutably on Polygon blockchain
+4. **AI Clinical Assistant** - Google Gemini integration for medical history summarization
+
+## 🛠️ Tech Stack
+
+- **Frontend:** Flutter (Dart)
+- **Backend:** Firebase (Auth, Firestore, Cloud Functions), Node.js
+- **Blockchain:** Solidity, Polygon (Mumbai Testnet)
+- **AI:** Google Gemini 2.0 (RAG architecture)
+- **Security:** AES-256 encryption, local_auth (biometrics), SHA-256 hashing
+
+## ✨ Key Features
+
+- Multi-factor authentication (Email, Google OAuth, Phone OTP)
+- Platform-native biometric app lock (iOS Face ID, Android Fingerprint)
+- Role-based access control (Patient, Doctor, Admin)
+- Medical record upload with OCR text extraction (ML Kit)
+- Time-limited QR code generation for doctor access
+- Merkle tree-based blockchain logging (99% gas cost reduction)
+- AI-powered patient history summarization
+
+## 👥 Team Project - My Contribution
+
+This was a **4-person final-year project**. I developed the **Authentication & User Management Module**, including:
+
+- Firebase Authentication integration (Email/Password, Google Sign-In, Phone OTP)
+- Biometric app lock using Flutter's `local_auth` package
+- Platform channels for native biometric hardware integration (iOS Secure Enclave, Android Keystore)
+- Role-based routing and session management
+- User profile screens (health data, allergies, medications)
+- Doctor credential verification flow
+
+**Other modules** (blockchain integration, medical records, AI assistant) were developed by teammates.
+
+## 📂 Project Structure
+```
+lib/
+├── app/                    # App-level logic
+│   ├── auth_gate.dart      # Role-based routing
+│   └── app_lock_gate.dart  # Biometric lock
+├── services/               # Backend services
+│   ├── auth_service.dart   # Firebase Auth
+│   └── ...
+├── screens/                # UI screens
+│   ├── patient_auth/       # Patient login/signup
+│   ├── doctor_auth/        # Doctor login
+│   └── patient_profile_screen.dart
+└── ...
+```
+
+## 🚀 Setup Instructions
 
 ### Prerequisites
+- Flutter SDK (3.0+)
+- Firebase account
+- Android Studio / VS Code
 
-*   Flutter SDK (3.0.0+)
-*   Dart SDK
-*   Firebase CLI
-*   Node.js (for Cloud Functions)
+### Installation
 
-### Steps
+1. Clone the repository
+```bash
+git clone https://github.com/shehabinsinad/ChainCare.git
+cd ChainCare
+```
 
-1.  **Clone the Repository**
-    ```bash
-    git clone https://github.com/yourusername/chaincare.git
-    cd chaincare
-    ```
+2. Install dependencies
+```bash
+flutter pub get
+```
 
-2.  **Install Dependencies**
-    ```bash
-    flutter pub get
-    ```
+3. Configure Firebase
+- Add `google-services.json` (Android) and `GoogleService-Info.plist` (iOS)
+- Update Firebase project settings in `lib/firebase_options.dart`
 
-3.  **Environment Configuration**
-    Create a `.env` file in the root directory and add your keys:
-    ```env
-    GEMINI_API_KEY=your_gemini_api_key
-    ```
+4. Run the app
+```bash
+flutter run
+```
 
-4.  **Run the App**
-    ```bash
-    flutter run
-    ```
+## 📝 Learning Outcomes
 
-## 🔐 Security Architecture
+This project taught me:
+- Building production-ready authentication systems with multiple auth providers
+- Platform-native integration using Flutter platform channels
+- Managing app lifecycle for biometric security
+- Working with Firebase backend services
+- Collaborating on a large codebase with team members using Git
 
-ChainCare employs a defense-in-depth strategy:
-1.  **Device Biometrics**: Secures local access.
-2.  **Firebase Auth**: Secure user authentication.
-3.  **Firestore Security Rules**: Server-side role-based access control.
-4.  **Audit Logging**: Immutable internal logs.
-5.  **Blockchain**: Public, decentralized verification of log integrity.
+## 📄 License
 
+This project was developed as an academic final-year project at MES College of Engineering.
+
+## 🙏 Acknowledgments
+
+Developed by a team of 4 students as our final-year B.Tech project (2024-2025).
