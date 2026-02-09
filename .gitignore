@@ -58,3 +58,4 @@ lib/screens/TEMP_system_prompt.txt
 
 # Firebase Configuration
 lib/firebase_options.dart
+android/app/google-services.json
