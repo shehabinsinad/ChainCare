@@ -55,3 +55,6 @@ app.*.map.json
 
 # Temporary files
 lib/screens/TEMP_system_prompt.txt
+
+# Firebase Configuration
+lib/firebase_options.dart
