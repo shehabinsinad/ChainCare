@@ -6,7 +6,7 @@ A mobile health vault with biometric security, QR-based access control, and bloc
 
 Patients lack control over their medical data, and there's no transparent way to track who accessed their records and when.
 
-<img src="images/landing_page.png" alt="ChainCare Landing Page" width="700">
+<img src="screenshots/landing_page.jpeg" alt="ChainCare Landing Page" width="700">
 
 ## 💡 Solution
 
@@ -61,7 +61,7 @@ Daily Merkle root anchor
 - **Security:** AES-256 encryption, local_auth (biometrics), SHA-256 hashing
 
 ### System Architecture
-<img src="images/system_architecture.jpeg" alt="ChainCare Architecture" width="700">
+<img src="screenshots/system_architecture.jpeg" alt="ChainCare Architecture" width="700">
 
 ## ✨ Key Features
 
