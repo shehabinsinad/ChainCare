@@ -6,8 +6,7 @@ A mobile health vault with biometric security, QR-based access control, and bloc
 
 Patients lack control over their medical data, and there's no transparent way to track who accessed their records and when.
 
-![ChainCare Landing Page](screenshots/landing_page.png)
-*Role-based portal selection: Patient, Doctor, or Emergency Access*
+<img src="images/landing_page.jpeg" alt="ChainCare Landing Page" width="700">
 
 ## 💡 Solution
 
@@ -18,26 +17,40 @@ ChainCare is a Flutter mobile application that gives patients full control over 
 3. **Blockchain Audit Trail** - Every access event logged immutably on Polygon blockchain
 4. **AI Clinical Assistant** - Google Gemini integration for medical history summarization
 
-![Security Architecture](screenshots/security_architecture.png)
-*Multi-layer security architecture from device biometrics to blockchain verification*
-
 ## 📱 Screenshots
 
-### Patient Dashboard
-![Patient Dashboard](screenshots/patient_dashboard.png)
-*Patient dashboard with quick actions: Medical ID QR, Records, AI Assistant, Access Logs*
+<div align="center">
 
-### Access Transparency Log
-![Access Log](screenshots/access_log.png)
-*Real-time audit trail showing who accessed records, when, and from which facility*
+<table>
+<tr>
+<td align="center" width="25%">
+<img src="screenshots/patient_dashboard.jpeg" height="420"><br>
+<b>Patient Dashboard</b><br>
+Quick actions: Medical ID, Records, AI Assistant
+</td>
 
-### Doctor Workspace
-![Doctor Dashboard](screenshots/doctor_dashboard.png)
-*Doctor dashboard with QR scanner for patient consent and record access*
+<td align="center" width="25%">
+<img src="screenshots/access_log.jpeg" height="420"><br>
+<b>Access Transparency Log</b><br>
+Real-time audit trail
+</td>
 
-### Blockchain Verification
-![Blockchain Audit](screenshots/blockchain_verification.png)
-*Blockchain-verified audit trail with Merkle root hashes posted to Polygon testnet*
+<td align="center" width="25%">
+<img src="screenshots/doctor_dashboard.jpeg" height="420"><br>
+<b>Doctor Workspace</b><br>
+QR-based patient access
+</td>
+
+<td align="center" width="25%">
+<img src="screenshots/blockchain_verification.jpeg" height="420"><br>
+<b>Blockchain Verification</b><br>
+Daily Merkle root anchor
+</td>
+</tr>
+</table>
+
+</div>
+
 
 ## 🛠️ Tech Stack
 
@@ -48,8 +61,7 @@ ChainCare is a Flutter mobile application that gives patients full control over 
 - **Security:** AES-256 encryption, local_auth (biometrics), SHA-256 hashing
 
 ### System Architecture
-![System Architecture](screenshots/system_architecture.png)
-*Full-stack integration: Flutter app ↔ Firebase backend ↔ Polygon blockchain ↔ Gemini AI*
+<img src="images/system_architecture.jpeg" alt="ChainCare Architecture" width="700">
 
 ## ✨ Key Features
 
@@ -60,10 +72,6 @@ ChainCare is a Flutter mobile application that gives patients full control over 
 - Time-limited QR code generation for doctor access
 - Merkle tree-based blockchain logging (99% gas cost reduction)
 - AI-powered patient history summarization
-
-### QR-Based Consent Flow
-![QR Consent Mechanism](screenshots/qr_flow.png)
-*Patient generates QR → Doctor scans → System creates audit log → Access recorded on blockchain*
 
 ## 👥 Team Project - My Contribution
 
@@ -77,10 +85,6 @@ This was a **4-person final-year project**. I developed the **Authentication & U
 - Doctor credential verification flow
 
 **Other modules** (blockchain integration, medical records, AI assistant) were developed by teammates.
-
-### AI Assistant Architecture (Built by teammate)
-![AI RAG Architecture](screenshots/ai_rag_flow.png)
-*Retrieval-Augmented Generation: Patient records → Context builder → Gemini AI → Clinical insights*
 
 ## 📂 Project Structure
 ```
