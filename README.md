@@ -6,7 +6,7 @@ A mobile health vault with biometric security, QR-based access control, and bloc
 
 Patients lack control over their medical data, and there's no transparent way to track who accessed their records and when.
 
-<img src="images/landing_page.jpeg" alt="ChainCare Landing Page" width="700">
+<img src="images/landing_page.png" alt="ChainCare Landing Page" width="700">
 
 ## 💡 Solution
 
