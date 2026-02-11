@@ -26,25 +26,21 @@ ChainCare is a Flutter mobile application that gives patients full control over 
 <td align="center" width="25%">
 <img src="screenshots/patient_dashboard.jpeg" height="420"><br>
 <b>Patient Dashboard</b><br>
-Quick actions: Medical ID, Records, AI Assistant
 </td>
 
 <td align="center" width="25%">
 <img src="screenshots/access_log.jpeg" height="420"><br>
 <b>Access Transparency Log</b><br>
-Real-time audit trail
 </td>
 
 <td align="center" width="25%">
 <img src="screenshots/doctor_dashboard.jpeg" height="420"><br>
 <b>Doctor Workspace</b><br>
-QR-based patient access
 </td>
 
 <td align="center" width="25%">
 <img src="screenshots/blockchain_verification.jpeg" height="420"><br>
 <b>Blockchain Verification</b><br>
-Daily Merkle root anchor
 </td>
 </tr>
 </table>
